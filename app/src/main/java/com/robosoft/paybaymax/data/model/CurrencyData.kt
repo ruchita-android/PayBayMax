@@ -7,4 +7,4 @@ data class CurrencyData(val success : Boolean,
                         val privacy : String,
                         val timestamp : Int,
                         val source : String,
-                        val quotes : Quotes)
+                        val quotes : HashMap<String,Double>)

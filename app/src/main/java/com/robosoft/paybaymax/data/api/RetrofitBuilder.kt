@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuilder {
 
-    private const val BASE_URL = "https://api.currencylayer.com/"
+    private const val BASE_URL = "http://api.currencylayer.com/"
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
@@ -14,6 +14,5 @@ object RetrofitBuilder {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
     val API_INTERFACE: ApiInterface = getRetrofit().create(ApiInterface::class.java)
 }
