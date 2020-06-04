@@ -78,15 +78,15 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         editText = findViewById(R.id.editText)
         spinner.onItemSelectedListener = this
         recyclerView.layoutManager = GridLayoutManager(this, 3)
-        adapter = RatesAdapter(arrayListOf(), isEmptyEdt())
+        adapter = RatesAdapter(arrayListOf(), getInputAmount())
         editText.addTextChangedListener {
-            adapter.setAmount(isEmptyEdt())
+            adapter.setAmount(getInputAmount())
             adapter.notifyDataSetChanged()
         }
         recyclerView.adapter = adapter
     }
 
-    private fun isEmptyEdt(): String {
+    private fun getInputAmount(): String {
         val edtFieldStr = editText.text.toString()
         return if (edtFieldStr.isEmpty()) {
             "1"
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private fun exchangeRates(quotes: List<Quotes>) {
         adapter.apply {
-            addQuotes(quotes, isEmptyEdt())
+            addQuotes(quotes, getInputAmount())
             notifyDataSetChanged()
         }
     }
