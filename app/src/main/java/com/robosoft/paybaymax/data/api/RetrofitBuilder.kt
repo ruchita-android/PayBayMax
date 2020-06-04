@@ -1,6 +1,5 @@
 package com.robosoft.paybaymax.data.api
 
-import ApiInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,5 +13,6 @@ object RetrofitBuilder {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
     val API_INTERFACE: ApiInterface = getRetrofit().create(ApiInterface::class.java)
 }
