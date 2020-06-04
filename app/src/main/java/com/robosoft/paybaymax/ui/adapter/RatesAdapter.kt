@@ -4,15 +4,18 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.robosoft.paybaymax.R
 import com.robosoft.paybaymax.data.model.Quotes
 import kotlinx.android.synthetic.main.item_list.view.*
 
 
-class RatesAdapter(private val quotes: ArrayList<Quotes>, private val currencyVal: String) :
+class RatesAdapter(private val quotes: ArrayList<Quotes>, private var currencyVal: String) :
     RecyclerView.Adapter<RatesAdapter.DataViewHolder>() {
+
+    fun setAmount(amount: String) {
+        currencyVal = amount
+    }
 
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

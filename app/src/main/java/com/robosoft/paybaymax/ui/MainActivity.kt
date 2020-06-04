@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -78,6 +79,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         spinner.onItemSelectedListener = this
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         adapter = RatesAdapter(arrayListOf(), isEmptyEdt())
+        editText.addTextChangedListener {
+            adapter.setAmount(isEmptyEdt())
+            adapter.notifyDataSetChanged()
+        }
         recyclerView.adapter = adapter
     }
 

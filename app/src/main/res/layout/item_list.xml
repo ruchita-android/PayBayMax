@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="@dimen/grid_padding">
 
     <TextView
@@ -10,7 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/grid_padding"
-        android:text="@string/hello_first_fragment"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        tools:text="USD"
         app:layout_constraintBottom_toTopOf="@id/textQuote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -20,7 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/grid_padding"
-        android:text="@string/hello_first_fragment"
+        android:gravity="center"
+        tools:text="@string/hello_first_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textCurrency" />
@@ -29,8 +33,9 @@
         android:id="@+id/textConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingBottom="@dimen/grid_padding"
-        android:text="@string/hello_first_fragment"
+        tools:text="@string/hello_first_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textQuote" />
