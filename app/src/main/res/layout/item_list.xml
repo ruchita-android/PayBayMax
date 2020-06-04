@@ -1,41 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/grid_padding">
 
     <TextView
         android:id="@+id/textCurrency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
         android:paddingBottom="@dimen/grid_padding"
+        android:text="@string/hello_first_fragment"
+        app:layout_constraintBottom_toTopOf="@id/textQuote"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textQuote"  />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
         android:paddingBottom="@dimen/grid_padding"
-        app:layout_constraintTop_toBottomOf="@id/textCurrency"
+        android:text="@string/hello_first_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-          />
-
+        app:layout_constraintTop_toBottomOf="@id/textCurrency" />
 
     <TextView
         android:id="@+id/textConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
         android:paddingBottom="@dimen/grid_padding"
-        app:layout_constraintTop_toBottomOf="@id/textQuote"
+        android:text="@string/hello_first_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/textQuote" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

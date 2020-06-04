@@ -9,10 +9,10 @@ import kotlinx.coroutines.Dispatchers
 class QuotesViewModel(private val quoteRepository: QuoteRepository) : ViewModel() {
 
 
-    fun getCurriencies() = liveData(Dispatchers.IO) {
+    fun getCurrencies() = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
         try {
-            emit(Resource.success(data = quoteRepository.getCurriencies()))
+            emit(Resource.success(data = quoteRepository.getCurrencies()))
         } catch (exception: Exception) {
             emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }
@@ -20,12 +20,10 @@ class QuotesViewModel(private val quoteRepository: QuoteRepository) : ViewModel(
 
     fun getQuotes(currency: String) = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
-            try {
-                emit(Resource.success(data = quoteRepository.getData(currency)))
-            } catch (exception: Exception) {
-                emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
-            }
+        try {
+            emit(Resource.success(data = quoteRepository.getData(currency)))
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
     }
-
-
 }

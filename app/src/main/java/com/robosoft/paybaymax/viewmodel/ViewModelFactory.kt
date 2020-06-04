@@ -1,6 +1,6 @@
 package com.robosoft.paybaymax.viewmodel
 
-import ApiHelper
+import com.robosoft.paybaymax.data.api.ApiHelper
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.robosoft.paybaymax.data.repository.QuoteRepository
@@ -13,6 +13,4 @@ class ViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Fac
         }
         throw IllegalArgumentException("Unknown class name")
     }
-
-
 }
